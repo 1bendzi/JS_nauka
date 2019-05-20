@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<script src="js/pgb.js"></script>
+		<script src="cordova.js"></script>
+	</head>
+	<body>
+
+		<p id="demo"></p>
+
+		<button id="trigger"> klyk </button>
+
+		<p id="textelement">I am a text element</p>
+
+		<p id="zamiana">I am a text element</p>
+
+		<input type="text" id="subEmail" onchange="checkFilled();"> <br> <br> 
+
+		<input type="text" id="input"> 
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script>
+	
+		    $("#demo").html("Hello, World!"); //pokazuje tekst w p
+
+			$("#trigger").click(function() {  
+			$("#demo").html("funkcyjka");  
+			}); //przycisk zamienia slowo z p
+			
+			document.getElementById("textelement").innerHTML = "New text inside!!!"; //dom; zamienia p o id 'textelement' na podany tekst
+
+			document.getElementById("zamiana").textContent="zamieniony"; //dom; to samo co wyzej
+
+
+			function checkFilled() { 
+		    var inputVal = document.getElementById("subEmail");
+		    if (inputVal.value == "") {
+			        inputVal.style.backgroundColor = "yellow";
+			    }
+			    else{
+			        inputVal.style.backgroundColor = "";
+			    }
+			} //jezeli wyjde z pola tekstowego i nic nie wpisze to zmienie kolor 
+
+			checkFilled();
+
+			$("input").change(function(){ 
+			  alert("The text has been changed.");
+			}); //jak wpisze cos w pole to wyskoczy komunikat 
+
+		</script>
+	</body>
+</html>

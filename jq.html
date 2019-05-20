@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<script src="js/pgb.js"></script>
+		<script src="cordova.js"></script>
+	</head>
+	<body>
+		<p id="demo"></p>
+		<p id="testowy2"></p>
+		<p type="drzewo"> Drzewo </p>
+		
+		<p id="overtext"> najedz mycha </p>
+
+		<button id="trigger"> klyk </button>
+		<button id="trigger1"> anklyk </button>
+		<button id="trigger2"> kolory? </button>
+		<button id="trigger3"> klawiaturka </button>
+
+		<style>
+			body {background-color: powderblue;}
+			h1   {color: blue;}
+			p    {color: red;}
+			.overlay {
+				  display: none;
+				  position: fixed;
+				  top: 50%;
+				  left: 50%;
+				  transform: translate(-50%, -50%);
+				  height: 200px;
+				  width: 200px;
+				  background: gray;
+				}
+		</style>
+		
+		<button class="trigger4">Open</button>
+		<section class="overlay">
+		 	<button class="trigger4">Close</button>
+		</section>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script> 
+			$(document).ready(function() {
+			    // all custom jQuery will go here
+			    $("#demo").html("Hello, World!"); //paragraf z id=demo zmienia
+			    $("#testowy2").html("Hello, World!"); 
+			    $("[type='Drzewo']").html("drzewko"); //zmienia tekst 'drzewo'
+
+			    $("#trigger").click(function() {
+			    	$("#testowy2").html("funkcyjka"); //jak klikne to zmienia slowo
+			    });
+
+			    $("#trigger1").click(function() {
+			    	$("#testowy2").html("Hello, World!"); //zmienia z powrotem  
+			    });
+			    
+			    $("#trigger2").hover(function(){  //zmienia jak sie najedzie myszka kolor 
+				  $(this).css("background-color", "yellow");
+				  }, function(){
+				  $(this).css("background-color", "pink");
+				});
+
+				$("#trigger3").keydown(function(){
+				  $(this).css("background-color", "purple"); //jak sie nacisnie klawisz to zmienia kolor 
+				});
+
+				$(".trigger4").click(function() {
+			        $(".overlay").fadeToggle();  //pojawia sie okno ktore moge zamknac (z css to jest)
+			    });
+			});
+		</script>
+	</body>
+</html>

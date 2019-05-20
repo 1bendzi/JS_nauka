@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<script src="js/pgb.js"></script>
+		<script src="cordova.js"></script>
+
+	</head>
+	<body>
+		<h1 class="title">Hello!</h1>
+		<button class="changeColor">Click me</button>
+		<br><br>
+		<div id="change"> D R Z E W O </div>
+
+		<ul class="name-list">
+			<li>ed</li>
+			<li>jon</li>
+			<li>joe</li>
+			<li>boy</li>
+			<li>harry</li>
+		</ul>
+		<br><br>
+		<ul id="namelist2">
+			<li>ed</li>
+			<li>jon</li>
+			<li>joe</li>
+			<li>boy</li>
+			<li>harry</li>
+		</ul>
+
+		<style>
+			.change {
+				color: lightblue;
+				font-size: 100px;
+				border: 10px solid black;
+			}
+		</style>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script> 
+			const text = document.querySelector('.title');
+			const changeColor = document.querySelector('.changeColor'); //jak nacisne przycisk to sie zrobi changeColor
+		
+			changeColor.addEventListener('click', function(){ //toggle zmeinia w dwie strony, zmienia kolor, odwolanie do css 
+				text.classList.toggle('change')
+			})
+
+			const userList = document.querySelectorAll('.name-list li'); //liste zapisuje
+
+			console.log(userList); //w konsoli sie pojawiaja elementy listy
+
+			for(user of userList){ //jak klikne w element listy to on zmieni kolor
+				user.addEventListener('click', function(){
+					this.style.color = "purple";
+				})
+			}
+			var change = document.getElementById('change'); //jak najade na d r z e w w o  to zmieni kolor 
+			var mouseOverFunction = function () {
+			     this.style.color = 'blue'; // your colour change
+			};
+			change.onmouseover = mouseOverFunction;
+
+			var namelist2 = document.getElementById('namelist2'); //jak najade na druga liste to zmieni kolor
+			var mouseOverFunction = function () {
+			     this.style.color = 'blue'; // your colour change
+			};
+			namelist2.onmouseover = mouseOverFunction;
+
+
+		</script>
+	</body>
+</html>
