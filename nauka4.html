@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	</head>
+	<body>
+		<p>Some outer text</p>
+		<p class="unicycle">Some outer text</p>      
+		<div id="div1" style="border: solid blue 3px">
+		  <p>Some div1 text</p>
+		  <p class="unicycle">Some div1 text</p>
+		  <div id="div2" style="border: solid red 3px">
+		    <p>Some div2 text</p>
+		    <p>Some div2 text</p>
+		  </div>
+		</div>
+
+		<script> 
+		var div1 = document.getElementById('div1');
+		var uniycle = document.getElementsByClassName('unicycle'); //elements i elements moze byc. wezmie wszystkie z klasa unicycle.
+		var uniycle = div1.getElementsByClassName('unicycle'); //wezmie tylko te z div1 
+		var paragraphs = document.getElementsByTagName('p'); //wezmie wszystkie paragrafy 
+
+		var queryUnicycle = document.querySelector('.unicycle'); //. nazwa klasy; #div1 id; wybiera pierwszy ktory znajdzie 
+		var queryAll = document.querySelectorAll('.unicycle, #div2');
+
+		var text = "<h1>Hello world</h1>";
+
+		//div1.innerHTML = text;  //zamienia wszystki z div1 na hellow world
+
+		for (i = 0; i < queryAll.length; ++i) { //queryall.lenght oznacza ilosc wszystkich elementow pobranych przez queryall 
+		  queryAll[i].innerHTML = text;
+		 };
+		</script>
+	</body>
+</html>
