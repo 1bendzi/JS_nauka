@@ -1,0 +1,15 @@
+git status 
+git log 
+git add .
+git commit -m "   "
+git reset HEAD~ jakas liczba commitow ostatnich
+git remote -v  (pokazuje remote'y)
+git remote add NAZWA URL
+git push NAZWA GALAC albo git push NAZWA
+git branch
+git branch NAZWA
+git checkout NAZWA
+git merge NAZWA
+git branch -d //usuwa
+git branch -a //pokazuje wszystkie
+git clone URL
